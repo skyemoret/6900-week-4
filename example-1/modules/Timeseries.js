@@ -3,7 +3,6 @@ d3.timeSeries = function(){
 	var w = 800,
 		h = 600,
 		m = {t:50,r:25,b:50,l:25},
-		layout = d3.layout.histogram(),
 		chartW = w - m.l - m.r,
 		chartH = h - m.t - m.b,
 		timeRange = [new Date(), new Date()], //default timeRange
@@ -54,7 +53,7 @@ d3.timeSeries = function(){
 		//append and update DOM
 		//Step 1: does <svg> element exist? If it does, update width and height; if it doesn't, create <svg>
 		var svg = d3.select(this).selectAll('svg')
-			.data([d]);
+            .data([d]);
 
 		var svgEnter = svg.enter().append('svg')
 		svgEnter.append('g').attr('class','area').attr('transform','translate('+m.l+','+m.t+')').append('path');
